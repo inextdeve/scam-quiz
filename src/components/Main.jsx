@@ -1,4 +1,23 @@
+import { useEffect, useState } from "react";
+
 const Main = () => {
+  const [timer, setTimer] = useState({
+    minutes: 0,
+    seconds: 0,
+  });
+  let timeleft = 300000;
+  useEffect(() => {
+    const countDown = setInterval(() => {
+      let minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+      timeleft -= 1000;
+      setTimer({ minutes, seconds });
+    }, 1000);
+    return () => {
+      clearInterval(countDown);
+    };
+  }, []);
+
   return (
     <main className="mt-20">
       <div className="flex justify-center">
@@ -20,7 +39,11 @@ const Main = () => {
           يهدف هذا الاستطلاع إلى تحسين جودة الخدمة لمستخدمينا وسيتم مكافأة
           مشاركتك بنسبة 100٪.
         </p>
-        <p>انت فقط لديك 0 دقائق و 00 ثوانى , للإجابة على هذا الاستطلاع!</p>
+        <p className="countdown" data-count="2022/10/10">
+          انت فقط لديك <span className="text-red-500">{timer.minutes}</span>{" "}
+          دقائق و <span className="text-red-500">{timer.seconds}</span> ثوانى ,
+          للإجابة على هذا الاستطلاع!
+        </p>
         <p>أسرع ، عدد الجوائز المتاحة محدود!</p>
       </div>
     </main>
