@@ -1,0 +1,92 @@
+
+
+.gift {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100px;
+    width: 100%;
+    height: 100px;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.gift-top {
+  position: relative;
+  width: 110%;
+  height: 25%;
+  background: #F54537;
+  border-radius: 5px 5px 0 0;
+  transform: translate3d(4%, 0, 0);
+  background-image: linear-gradient(to right, #F54537 0%, #F54537 44%, #FFC113 44%, #FFC113 56%, #F54537 56%, #F54537 100%);
+}
+
+.gift-top::before,
+.gift-top::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 10px solid #FFC113;
+    border-radius: 50% 50% 0 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate3d(-100%, -100%, 0) skew(10deg, 10deg);
+}
+
+.gift-top::after {
+  border-radius: 50% 50% 50% 0;
+  transform: translate3d(0, -100%, 0) skew(-10deg, -10deg);
+}
+
+.gift-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  color: #333333;
+  white-space: nowrap;
+  transform: translate3d(-50%, -50%, 0) scale(.5);
+  transform-origin: center center;
+  z-index: -1;
+}
+
+.gift-box {
+  width: 100%;
+  height: 75%;
+  background-image: linear-gradient(to right, #D43130 0%, #D43130 45%, #FF900A 45%, #FF900A 55%, #D43130 55%, #D43130 100%);
+  border-radius: 0 0 5px 5px;
+}
+.openGift {
+  pointer-events: none;
+}
+.openGift .gift-top {
+    transition: transform 400ms ease-in-out;
+    transform: translate3d(4%, -150%, 0);
+    
+    
+}
+.gift:hover {
+    animation: zigzag 500ms linear;
+}
+.gift-img {
+    transform: rotate(90deg) scale(.9);
+    transition: transform 500ms ease-in-out;
+    z-index: -12;
+}
+.gift-img-open {
+  transform: rotate(90deg) translateX(-36%) scale(.9);
+}
+@keyframes zigzag {
+    0% {
+        transform: translateX(-6%) translate3d(-50%, -50%, 0);
+    }
+    25% {
+        transform: translateX(6%) translate3d(-50%, -50%, 0);
+    }
+    50% {
+        transform: translateX(-6%) translate3d(-50%, -50%, 0);
+    }
+    100% {
+        transform: translateX(0) translate3d(-50%, -50%, 0);
+    }
+}

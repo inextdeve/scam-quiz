@@ -1,0 +1,24 @@
+.condition {
+    opacity: 0;
+    animation: opacityPlus 500ms forwards;
+}
+
+.cd1 {
+    animation-delay: 1000ms;
+}
+.cd2 {
+    animation-delay: 2000ms;
+}
+.cd3 {
+    animation-delay: 2500ms;
+}
+@keyframes opacityPlus {
+
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
