@@ -99,7 +99,7 @@ const Congratulation = () => {
             جائزتك : iphone-12-pro-max-blue , مبروك عليك المرجوا اتباع التعليمات
             الموجودة في الاسفل لكي يتم ارسال الهاتف اليك !
           </p>
-          <div className="bg-gray-300 text-center rounded p-3">
+          <div className="bg-gray-300 text-center rounded p-8">
             <p className="my-4 font-bold text-xl">***القواعد***</p>
             <p className="my-4">
               1 - لم يتبقى لك سوى خطوة للحصول على الهاتف الخاص بك . لكي تستلم

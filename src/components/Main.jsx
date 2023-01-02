@@ -31,7 +31,7 @@ const Main = () => {
   }, []);
 
   return (
-    <main className="mt-20 container mx-auto px-3">
+    <main className="mt-10 container mx-auto px-3">
       <div className="flex justify-center">
         <img className="w-80" src="./images/apple.png" />
       </div>
