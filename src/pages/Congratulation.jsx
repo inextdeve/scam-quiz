@@ -133,6 +133,7 @@ const Congratulation = () => {
             {progress.message ? (
               <Modal
                 title="تنبيه !"
+                titleColor="text-red-500"
                 p={[
                   "يجب ان لا تقوم بالنشر في نفس المجموعة او الصديق اكتر من مرة .",
                 ]}
@@ -150,6 +151,7 @@ const Congratulation = () => {
             {showAlert ? (
               <Modal
                 title="تنبيه"
+                titleColor="text-red-500"
                 p={[
                   "المروجوا الضغط على زر الواتساب والنشر حتى يمتلأ الشريط الازرق واضغط على ارسال الهاتف",
                 ]}

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GiftContext } from "../context/context";
 
@@ -28,15 +28,22 @@ const Quiz = () => {
     },
   ];
 
-  const [animation, setAnimation] = useState("fadeIn");
+  const [animation, setAnimation] = useState("");
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimation("fadeIn");
+    }, 500);
+  }, [])
 
   const handleClick = () => {
-    setAnimation("fadeOut");
-
+    
+    setAnimation("")
     setTimeout(() => {
       setI((prev) => (prev += 1));
       setAnimation("fadeIn");
-    }, 1100);
+    }, 500);
+
     if (i === quizQuestion.length - 1) {
       setI(0);
       setQuestionPassed(true);
@@ -52,7 +59,7 @@ const Quiz = () => {
           <button
             key={index}
             onClick={handleClick}
-            className={`${animation} rounded p-3 my-3 block btn btn__primary`}
+            className={`qz-hidden ${animation} rounded p-3 my-3 block btn btn__primary`}
           >
             {answer}
           </button>

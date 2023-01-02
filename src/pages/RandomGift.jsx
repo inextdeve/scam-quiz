@@ -4,7 +4,6 @@ import Modal from "../components/common/Modal";
 import FormModal from "../components/common/formModal";
 import QuizGame from "../components/QuizGame";
 import { GiftContext } from "../context/context";
-import { Navigate } from "react-router-dom";
 
 import "./randomgift.css";
 
@@ -50,13 +49,31 @@ const RandomGift = () => {
   useEffect(() => {
     const loader = setTimeout(() => {
       setLoading(false);
-    }, 6000);
+    }, 100);//Modify time
 
     return () => clearTimeout(loader);
   });
-  if (!questionPassed) {
-    return <Navigate to="/" />;
-  }
+  //remove comment here
+  // if (!questionPassed) {
+  //   return <Navigate to="/" />;
+  // }
+
+  const [showFail, setShowFail] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
+  useEffect(() => {
+    if (giftClick === 1) {
+      setTimeout(() => {
+        setShowFail(true)
+      }, 2000)
+    }
+
+    if (giftClick === 2) {
+      setTimeout(() => {
+        setShowSuccess(true)
+      }, 2000)
+    }
+  }, [giftClick])
+
   return (
     <>
       {loading ? (
@@ -83,7 +100,7 @@ const RandomGift = () => {
 
           <QuizGame />
 
-          {giftClick === 1 ? (
+          {showFail ? (
             <Modal
               title={ModalContent[1].title}
               buttonText={ModalContent[1].buttonText}
@@ -93,7 +110,7 @@ const RandomGift = () => {
           ) : (
             ""
           )}
-          {giftClick === 2 ? (
+          {showSuccess ? (
             <Modal
               isWinner={true}
               title={ModalContent[2].title}

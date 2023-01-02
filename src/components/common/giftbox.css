@@ -60,7 +60,7 @@
   pointer-events: none;
 }
 .openGift .gift-top {
-    transition: transform 400ms ease-in-out;
+    transition: transform 2000ms ease-in-out;
     transform: translate3d(4%, -150%, 0);
     
     
@@ -70,10 +70,11 @@
 }
 .gift-img {
     transform: rotate(90deg) scale(.9);
-    transition: transform 500ms ease-in-out;
+    transition: transform 1900ms ease-in-out;
     z-index: -12;
 }
 .gift-img-open {
+
   transform: rotate(90deg) translateX(-36%) scale(.9);
 }
 @keyframes zigzag {
