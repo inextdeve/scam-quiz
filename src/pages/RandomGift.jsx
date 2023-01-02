@@ -49,14 +49,14 @@ const RandomGift = () => {
   useEffect(() => {
     const loader = setTimeout(() => {
       setLoading(false);
-    }, 100);//Modify time
+    }, 6000);//Modify time 6000
 
     return () => clearTimeout(loader);
   });
-  //remove comment here
-  // if (!questionPassed) {
-  //   return <Navigate to="/" />;
-  // }
+  
+  if (!questionPassed) {
+    return <Navigate to="/" />;
+  }
 
   const [showFail, setShowFail] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
