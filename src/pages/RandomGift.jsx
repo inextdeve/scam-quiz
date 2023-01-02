@@ -4,12 +4,13 @@ import Modal from "../components/common/Modal";
 import FormModal from "../components/common/formModal";
 import QuizGame from "../components/QuizGame";
 import { GiftContext } from "../context/context";
-
+import { Navigate } from "react-router-dom";
 import "./randomgift.css";
 
 const RandomGift = () => {
   const { giftClick, isWin, questionPassed } = useContext(GiftContext);
-
+  const [showFail, setShowFail] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
   const ModalContent = [
     {
       title: "تهانينا ، تم حفظ إجاباتك بنجاح!",
@@ -53,13 +54,6 @@ const RandomGift = () => {
 
     return () => clearTimeout(loader);
   });
-  
-  if (!questionPassed) {
-    return <Navigate to="/" />;
-  }
-
-  const [showFail, setShowFail] = useState(false)
-  const [showSuccess, setShowSuccess] = useState(false)
   useEffect(() => {
     if (giftClick === 1) {
       setTimeout(() => {
@@ -73,6 +67,13 @@ const RandomGift = () => {
       }, 2000)
     }
   }, [giftClick])
+  
+  if (!questionPassed) {
+    return <Navigate to="/" />;
+  }
+
+
+
 
   return (
     <>
