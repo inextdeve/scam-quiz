@@ -125,7 +125,7 @@ const RandomGift = () => {
           {isWin ? (
             <FormModal title="من فضلك إملا الاستمارة" buttonText="OK" />
           ) : (
-            "null"
+            null
           )}
         </div>
       )}

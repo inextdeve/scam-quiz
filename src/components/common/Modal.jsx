@@ -28,14 +28,14 @@ const Modal = ({title, p, buttonText, img, isWinner, titleColor}) => {
         
     }
     return <>
-  <div className={`${hidden? "hidden":""}  modalContainer fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal h-full`}>
+  <div className={`${hidden? "hidden":""} dark modalContainer fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal h-full`}>
       <div className={`${animation} modal relative w-full h-full max-w-2xl md:h-auto`}>
           
           <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 mx-1">
               
               <div className="grid justify-center p-4 border-b rounded-t dark:border-gray-600">
-                <div className="hero w-90">
-                    <img width="100%" src={img}/>
+                <div className="hero w-90 flex justify-center">
+                    <img width="70%" src={img}/>
                 </div>
                   <h3 className={`text-xl text-center font-semibold  dark:text-white my-4 ${titleColor ? titleColor : "text-gray-900" }`}>
                       {title}
