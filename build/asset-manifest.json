@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/v2.visa-gift.com/static/css/main.b963086b.css",
+    "main.js": "/v2.visa-gift.com/static/js/main.0f0e9dbc.js",
+    "index.html": "/v2.visa-gift.com/index.html",
+    "main.b963086b.css.map": "/v2.visa-gift.com/static/css/main.b963086b.css.map",
+    "main.0f0e9dbc.js.map": "/v2.visa-gift.com/static/js/main.0f0e9dbc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b963086b.css",
+    "static/js/main.0f0e9dbc.js"
+  ]
+}

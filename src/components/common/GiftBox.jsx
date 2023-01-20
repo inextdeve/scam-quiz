@@ -15,7 +15,11 @@ const GiftBox = () => {
             setOpen(true);
             const Image = document.createElement("img");
             Image.src="./images/iphone.png";
-            Image.setAttribute("class", `absolute top-0 gift-img gift-img-open`)
+            Image.setAttribute("class", `absolute top-0 gift-img`);
+            setTimeout(() => {
+                Image.setAttribute("class", `absolute top-0 gift-img gift-img-open`);
+            }, 100)
+            
             
             giftEl.current.firstElementChild.after(Image)
 

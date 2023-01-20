@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Quiz from "./Quiz"
+import Quiz from "./Quiz";
 const Main = () => {
-  const [rest, setRest] = useState("جاري التحميل ...")
+  const [rest, setRest] = useState("جاري التحميل ...");
   const [timer, setTimer] = useState({
     minutes: 0,
     seconds: 0,
@@ -22,8 +22,8 @@ const Main = () => {
   useEffect(() => {
     let i = 187;
     const countDown = setInterval(() => {
-      setRest(i)
-      i--
+      setRest(i);
+      i--;
     }, 10000);
     return () => {
       clearInterval(countDown);
@@ -31,7 +31,7 @@ const Main = () => {
   }, []);
 
   return (
-    <main className="mt-20 container mx-auto px-3">
+    <main className="mt-10 container mx-auto px-3">
       <div className="flex justify-center">
         <img className="w-80" src="./images/apple.png" />
       </div>
@@ -52,9 +52,10 @@ const Main = () => {
           مشاركتك بنسبة 100٪.
         </p>
         <p className="countdown py-2">
-          انت فقط لديك <span className="text-red-500 font-bold">{timer.minutes}</span>{" "}
-          دقائق و <span className="text-red-500 font-bold">{timer.seconds}</span> ثوانى ,
-          للإجابة على هذا الاستطلاع!
+          انت فقط لديك{" "}
+          <span className="text-red-500 font-bold">{timer.minutes}</span> دقائق
+          و <span className="text-red-500 font-bold">{timer.seconds}</span>{" "}
+          ثوانى , للإجابة على هذا الاستطلاع!
         </p>
         <p className="font-bold">أسرع ، عدد الجوائز المتاحة محدود!</p>
       </div>
@@ -63,7 +64,7 @@ const Main = () => {
           الهدايا المتبقية {rest}
         </div>
       </div>
-      <Quiz/>
+      <Quiz />
     </main>
   );
 };
